@@ -1,0 +1,18 @@
+{
+  "name": "pi-toolkit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal pi extensions: live token/cache usage, cheap-model compaction, git-worktree subagent teams, and an optional local Ollama provider.",
+  "keywords": ["pi-package"],
+  "pi": {
+    "extensions": ["./extensions"],
+    "prompts": ["./prompts"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  }
+}

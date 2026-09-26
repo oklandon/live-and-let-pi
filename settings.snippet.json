@@ -1,0 +1,9 @@
+{
+  "_comment": "Reference only — not auto-applied by pi install. Merge the relevant keys into ~/.pi/agent/settings.json by hand on each machine (settings.json isn't a pi package resource type).",
+
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 16384,
+    "keepRecentTokens": 20000
+  }
+}
