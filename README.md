@@ -1,11 +1,11 @@
-# pi-toolkit
+# live-and-let-pi
 
 Personal extensions for the [pi](https://github.com/earendil-works/pi-mono) coding agent harness: token/cost visibility, cheaper compaction, git-worktree-isolated subagent teams, and an optional local Ollama provider. Installable on any machine straight from this repo.
 
 ## Install
 
 ```bash
-pi install git:github.com/<you>/pi-toolkit
+pi install git:github.com/<you>/live-and-let-pi
 ```
 
 Writes an entry to `~/.pi/agent/settings.json`'s `packages` array. Extensions and prompts auto-load on next start (or `/reload`).
@@ -13,7 +13,7 @@ Writes an entry to `~/.pi/agent/settings.json`'s `packages` array. Extensions an
 To iterate locally before pushing:
 
 ```bash
-pi install /absolute/path/to/pi-toolkit
+pi install /absolute/path/to/live-and-let-pi
 ```
 
 Update on any machine later:
@@ -28,7 +28,7 @@ pi update --extensions
 Always-on footer: cumulative `↑input ↓output`, prompt-cache hit rate, running cost, and how close the active context is to triggering compaction. Toggle with `/context-status`.
 
 ### `extensions/cheap-compaction/`
-Runs auto-compaction summaries on a cheaper/faster model (default `anthropic/claude-haiku-4-5`) instead of your main conversation model. Falls back to pi's default compaction if the configured model/auth isn't available. Configure via `PI_TOOLKIT_COMPACTION_PROVIDER` / `PI_TOOLKIT_COMPACTION_MODEL` env vars.
+Runs auto-compaction summaries on a cheaper/faster model (default `anthropic/claude-haiku-4-5`) instead of your main conversation model. Falls back to pi's default compaction if the configured model/auth isn't available. Configure via `PI_LIVE_AND_LET_PI_COMPACTION_PROVIDER` / `PI_LIVE_AND_LET_PI_COMPACTION_MODEL` env vars.
 
 ### `extensions/worktree-team/`
 Subagent delegation tool (`worktree_team`), adapted from pi's own bundled `subagent` example. Single / parallel / chain modes, each task optionally running in its own `git worktree` on a scratch branch (`useWorktree: true`), merged back into the current branch automatically on success. Failed tasks and merge conflicts leave the worktree and branch in place for manual inspection instead of discarding work.

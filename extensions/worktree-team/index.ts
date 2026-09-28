@@ -313,7 +313,7 @@ async function mergeAndCleanupWorktree(repoCwd: string, handle: WorktreeHandle, 
 		}
 
 		await execFileAsync("git", ["add", "-A"], { cwd: handle.dir, encoding: "utf8" });
-		await execFileAsync("git", ["commit", "-m", `pi-toolkit: ${handle.branch}`], { cwd: handle.dir, encoding: "utf8" });
+		await execFileAsync("git", ["commit", "-m", `live-and-let-pi: ${handle.branch}`], { cwd: handle.dir, encoding: "utf8" });
 	} catch (error: any) {
 		const detail = error?.stderr?.toString().trim() || error?.message || String(error);
 		return `failed to commit changes in worktree, left in place at ${handle.dir} (branch ${handle.branch}): ${detail}`;

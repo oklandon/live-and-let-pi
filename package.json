@@ -1,5 +1,5 @@
 {
-  "name": "pi-toolkit",
+  "name": "live-and-let-pi",
   "version": "0.1.0",
   "private": true,
   "description": "Personal pi extensions: live token/cache usage, cheap-model compaction, git-worktree subagent teams, and an optional local Ollama provider.",
