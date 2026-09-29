@@ -1,12 +1,44 @@
 {
   "name": "live-and-let-pi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Personal pi extensions: live token/cache usage, cheap-model compaction, git-worktree subagent teams, and an optional local Ollama provider.",
+  "description": "Personal pi setup in one install: own extensions (token/cache usage, cheap-model compaction, git-worktree subagent teams, local Ollama provider, grill-me) plus a curated set of third-party pi packages.",
   "keywords": ["pi-package"],
   "pi": {
-    "extensions": ["./extensions"],
-    "prompts": ["./prompts"]
+    "extensions": [
+      "./extensions",
+      "node_modules/pi-rtk-optimizer/index.ts",
+      "node_modules/pi-ask-user/index.ts",
+      "node_modules/pi-autoresearch/extensions",
+      "node_modules/pi-btw/extensions/btw.ts",
+      "node_modules/pi-web-access/dist",
+      "node_modules/pi-subagents/index.js",
+      "node_modules/pi-simplify/dist/index.js",
+      "node_modules/@juanibiapina/pi-powerbar/src",
+      "node_modules/@juanibiapina/pi-powerbar/node_modules/@juanibiapina/pi-usage/index.ts",
+      "node_modules/pi-mcp-adapter/index.ts"
+    ],
+    "skills": [
+      "node_modules/pi-ask-user/skills",
+      "node_modules/pi-autoresearch/skills",
+      "node_modules/pi-btw/skills",
+      "node_modules/pi-subagents/skills"
+    ],
+    "prompts": [
+      "./prompts",
+      "node_modules/pi-subagents/prompts"
+    ]
+  },
+  "dependencies": {
+    "@juanibiapina/pi-powerbar": "0.16.0",
+    "pi-ask-user": "0.15.1",
+    "pi-autoresearch": "1.8.1",
+    "pi-btw": "0.6.1",
+    "pi-mcp-adapter": "3.2.0",
+    "pi-rtk-optimizer": "0.9.0",
+    "pi-simplify": "0.2.3",
+    "pi-subagents": "0.73.1",
+    "pi-web-access": "0.33.0"
   },
   "peerDependencies": {
     "@earendil-works/pi-ai": "*",

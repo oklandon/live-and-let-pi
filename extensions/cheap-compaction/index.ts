@@ -10,8 +10,8 @@
  * configured provider's auth.
  *
  * Configure via env vars (both optional):
- *   PI_TOOLKIT_COMPACTION_PROVIDER   default: "anthropic"
- *   PI_TOOLKIT_COMPACTION_MODEL      default: "claude-haiku-4-5"
+ *   PI_LIVE_AND_LET_PI_COMPACTION_PROVIDER   default: "anthropic"
+ *   PI_LIVE_AND_LET_PI_COMPACTION_MODEL      default: "claude-haiku-4-5"
  */
 
 import { uuidv7 } from "@earendil-works/pi-ai";
@@ -19,8 +19,8 @@ import { complete } from "@earendil-works/pi-ai/compat";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { convertToLlm, serializeConversation } from "@earendil-works/pi-coding-agent";
 
-const PROVIDER = process.env.PI_TOOLKIT_COMPACTION_PROVIDER || "anthropic";
-const MODEL_ID = process.env.PI_TOOLKIT_COMPACTION_MODEL || "claude-haiku-4-5";
+const PROVIDER = process.env.PI_LIVE_AND_LET_PI_COMPACTION_PROVIDER || process.env.PI_TOOLKIT_COMPACTION_PROVIDER || "anthropic";
+const MODEL_ID = process.env.PI_LIVE_AND_LET_PI_COMPACTION_MODEL || process.env.PI_TOOLKIT_COMPACTION_MODEL || "claude-haiku-4-5";
 
 export default function (pi: ExtensionAPI) {
 	pi.on("session_before_compact", async (event, ctx) => {

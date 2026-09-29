@@ -11,13 +11,13 @@
  *
  * Configure via env vars (both optional):
  *   OLLAMA_BASE_URL   default: "http://127.0.0.1:11434/v1"
- *   PI_TOOLKIT_OLLAMA_PROBE_TIMEOUT_MS   default: 300
+ *   PI_LIVE_AND_LET_PI_OLLAMA_PROBE_TIMEOUT_MS   default: 300
  */
 
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 const BASE_URL = process.env.OLLAMA_BASE_URL || "http://127.0.0.1:11434/v1";
-const PROBE_TIMEOUT_MS = Number(process.env.PI_TOOLKIT_OLLAMA_PROBE_TIMEOUT_MS) || 300;
+const PROBE_TIMEOUT_MS = Number(process.env.PI_LIVE_AND_LET_PI_OLLAMA_PROBE_TIMEOUT_MS ?? process.env.PI_TOOLKIT_OLLAMA_PROBE_TIMEOUT_MS) || 300;
 
 interface OllamaModel {
 	id: string;
